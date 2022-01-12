@@ -2,6 +2,6 @@
 
 class_LinIf LinIf;
 
-void class_LinIf::InitFunction(void){
+FUNC(void, LINIF_CODE) class_LinIf::InitFunction(void){
 }
 
