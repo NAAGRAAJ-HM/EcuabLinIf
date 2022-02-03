@@ -26,7 +26,6 @@ class class_LinIf{
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, LINIF_CODE) InitFunction         (void);
       FUNC(void, LINIF_CODE) GetVersionInfo       (void);
       FUNC(void, LINIF_CODE) Transmit             (void);
       FUNC(void, LINIF_CODE) ScheduleRequest      (void);
