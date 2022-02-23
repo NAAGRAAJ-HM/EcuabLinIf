@@ -6,9 +6,10 @@
 /*****************************************************/
 /* #INCLUDES                                         */
 /*****************************************************/
-#include "LinIf.h"
-
+#include "module.h"
 #include "LinIf_EcuM.h"
+#include "LinIf_SchM.h"
+#include "LinIf_Unused.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -21,6 +22,16 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
+class module_LinIf:
+      public abstract_module
+   ,  public interface_LinIf_EcuM
+   ,  public interface_LinIf_SchM
+{
+   public:
+      FUNC(void, LINIF_CODE) InitFunction   (void);
+      FUNC(void, LINIF_CODE) DeInitFunction (void);
+      FUNC(void, LINIF_CODE) MainFunction   (void);
+};
 
 /*****************************************************/
 /* CONSTS                                            */
@@ -33,53 +44,57 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-class_LinIf LinIf;
-class_LinIf_EcuM LinIf_EcuM;
-class_EcuM_Client *EcuM_Client_ptr_LinIf = &LinIf_EcuM;
+module_LinIf LinIf;
+
+interface_LinIf_EcuM *EcuM_Client_ptr_LinIf = &LinIf;
+interface_LinIf_SchM *SchM_Client_ptr_LinIf = &LinIf;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-FUNC(void, LINIF_CODE) class_LinIf_EcuM::InitFunction(void){
+FUNC(void, LINIF_CODE) module_LinIf::InitFunction(void){
 }
 
-FUNC(void, LINIF_CODE) class_LinIf::GetVersionInfo(void){
+FUNC(void, LINIF_CODE) module_LinIf::DeInitFunction(void){
 }
 
-FUNC(void, LINIF_CODE) class_LinIf::Transmit(void){
+FUNC(void, LINIF_CODE) module_LinIf::MainFunction(void){
 }
 
-FUNC(void, LINIF_CODE) class_LinIf::ScheduleRequest(void){
+FUNC(void, LINIF_CODE) class_LinIf_Unused::GetVersionInfo(void){
 }
 
-FUNC(void, LINIF_CODE) class_LinIf::GoToSleep(void){
+FUNC(void, LINIF_CODE) class_LinIf_Unused::Transmit(void){
 }
 
-FUNC(void, LINIF_CODE) class_LinIf::Wakeup(void){
+FUNC(void, LINIF_CODE) class_LinIf_Unused::ScheduleRequest(void){
 }
 
-FUNC(void, LINIF_CODE) class_LinIf::GetTrcvMode(void){
+FUNC(void, LINIF_CODE) class_LinIf_Unused::GoToSleep(void){
 }
 
-FUNC(void, LINIF_CODE) class_LinIf::SetTrcvMode(void){
+FUNC(void, LINIF_CODE) class_LinIf_Unused::Wakeup(void){
 }
 
-FUNC(void, LINIF_CODE) class_LinIf::GetTrcvWakeupReason(void){
+FUNC(void, LINIF_CODE) class_LinIf_Unused::GetTrcvMode(void){
 }
 
-FUNC(void, LINIF_CODE) class_LinIf::SetTrcvWakeupMode(void){
+FUNC(void, LINIF_CODE) class_LinIf_Unused::SetTrcvMode(void){
 }
 
-FUNC(void, LINIF_CODE) class_LinIf::CancelTransmit(void){
+FUNC(void, LINIF_CODE) class_LinIf_Unused::GetTrcvWakeupReason(void){
 }
 
-FUNC(void, LINIF_CODE) class_LinIf::CheckWakeup(void){
+FUNC(void, LINIF_CODE) class_LinIf_Unused::SetTrcvWakeupMode(void){
 }
 
-FUNC(void, LINIF_CODE) class_LinIf::CbWakeupConfirmation(void){
+FUNC(void, LINIF_CODE) class_LinIf_Unused::CancelTransmit(void){
 }
 
-FUNC(void, LINIF_CODE) class_LinIf::MainFunction(void){
+FUNC(void, LINIF_CODE) class_LinIf_Unused::CheckWakeup(void){
+}
+
+FUNC(void, LINIF_CODE) class_LinIf_Unused::CbWakeupConfirmation(void){
 }
 
 /*****************************************************/
