@@ -24,8 +24,6 @@
 /*****************************************************/
 class module_LinIf:
       public abstract_module
-   ,  public interface_LinIf_EcuM
-   ,  public interface_LinIf_SchM
 {
    public:
       FUNC(void, LINIF_CODE) InitFunction   (void);
@@ -44,10 +42,9 @@ class module_LinIf:
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-module_LinIf LinIf;
-
-interface_LinIf_EcuM *EcuM_Client_ptr_LinIf = &LinIf;
-interface_LinIf_SchM *SchM_Client_ptr_LinIf = &LinIf;
+module_LinIf   LinIf;
+infEcuMClient* gptrinfEcuMClient_LinIf = &LinIf;
+infSchMClient* gptrinfSchMClient_LinIf = &LinIf;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
