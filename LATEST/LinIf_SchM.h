@@ -32,7 +32,7 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern interface_LinIf_SchM *SchM_Client_ptr_LinIf;
+extern infSchMClient *gptrinfSchMClient_LinIf;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
