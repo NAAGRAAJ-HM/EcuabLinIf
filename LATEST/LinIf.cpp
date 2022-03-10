@@ -7,8 +7,8 @@
 /* #INCLUDES                                         */
 /*****************************************************/
 #include "module.h"
-#include "LinIf_EcuM.h"
-#include "LinIf_SchM.h"
+#include "infLinIf_EcuM.h"
+#include "infLinIf_SchM.h"
 #include "LinIf_Unused.h"
 
 /*****************************************************/
@@ -28,6 +28,7 @@ class module_LinIf:
    public:
       FUNC(void, LINIF_CODE) InitFunction   (void);
       FUNC(void, LINIF_CODE) DeInitFunction (void);
+      FUNC(void, LINIF_CODE) GetVersionInfo (void);
       FUNC(void, LINIF_CODE) MainFunction   (void);
 };
 
@@ -44,6 +45,7 @@ class module_LinIf:
 /*****************************************************/
 module_LinIf   LinIf;
 infEcuMClient* gptrinfEcuMClient_LinIf = &LinIf;
+infDcmClient*  gptrinfDcmClient_LinIf  = &LinIf;
 infSchMClient* gptrinfSchMClient_LinIf = &LinIf;
 
 /*****************************************************/
@@ -53,6 +55,9 @@ FUNC(void, LINIF_CODE) module_LinIf::InitFunction(void){
 }
 
 FUNC(void, LINIF_CODE) module_LinIf::DeInitFunction(void){
+}
+
+FUNC(void, LINIF_CODE) module_LinIf::GetVersionInfo(void){
 }
 
 FUNC(void, LINIF_CODE) module_LinIf::MainFunction(void){
