@@ -1,6 +1,6 @@
 #pragma once
 /*****************************************************/
-/* File   : LinIf_SchM.h                             */
+/* File   : infLinIf_EcuM.h                          */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
@@ -32,7 +32,7 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern infSchMClient* gptrinfSchMClient_LinIf;
+extern infEcuMClient* gptrinfEcuMClient_LinIf;
 
 /*****************************************************/
 /* FUNCTIONS                                         */

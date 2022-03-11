@@ -1,15 +1,13 @@
+#pragma once
 /*****************************************************/
-/* File   : LinIf.cpp                                */
+/* File   : infLinIf_SchM.h                          */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
 /*****************************************************/
 /* #INCLUDES                                         */
 /*****************************************************/
-#include "module.h"
-#include "infLinIf_EcuM.h"
-#include "infLinIf_Dcm.h"
-#include "infLinIf_SchM.h"
+#include "Compiler_Cfg_LinIf.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -22,15 +20,6 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class module_LinIf:
-      public abstract_module
-{
-   public:
-      FUNC(void, LINIF_CODE) InitFunction   (void);
-      FUNC(void, LINIF_CODE) DeInitFunction (void);
-      FUNC(void, LINIF_CODE) GetVersionInfo (void);
-      FUNC(void, LINIF_CODE) MainFunction   (void);
-};
 
 /*****************************************************/
 /* CONSTS                                            */
@@ -43,60 +32,11 @@ class module_LinIf:
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-module_LinIf   LinIf;
-infEcuMClient* gptrinfEcuMClient_LinIf = &LinIf;
-infDcmClient*  gptrinfDcmClient_LinIf  = &LinIf;
-infSchMClient* gptrinfSchMClient_LinIf = &LinIf;
+extern infSchMClient* gptrinfSchMClient_LinIf;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-FUNC(void, LINIF_CODE) module_LinIf::InitFunction(void){
-}
-
-FUNC(void, LINIF_CODE) module_LinIf::DeInitFunction(void){
-}
-
-FUNC(void, LINIF_CODE) module_LinIf::GetVersionInfo(void){
-}
-
-FUNC(void, LINIF_CODE) module_LinIf::MainFunction(void){
-}
-
-#include "LinIf_Unused.h"
-
-FUNC(void, LINIF_CODE) class_LinIf_Unused::Transmit(void){
-}
-
-FUNC(void, LINIF_CODE) class_LinIf_Unused::ScheduleRequest(void){
-}
-
-FUNC(void, LINIF_CODE) class_LinIf_Unused::GoToSleep(void){
-}
-
-FUNC(void, LINIF_CODE) class_LinIf_Unused::Wakeup(void){
-}
-
-FUNC(void, LINIF_CODE) class_LinIf_Unused::GetTrcvMode(void){
-}
-
-FUNC(void, LINIF_CODE) class_LinIf_Unused::SetTrcvMode(void){
-}
-
-FUNC(void, LINIF_CODE) class_LinIf_Unused::GetTrcvWakeupReason(void){
-}
-
-FUNC(void, LINIF_CODE) class_LinIf_Unused::SetTrcvWakeupMode(void){
-}
-
-FUNC(void, LINIF_CODE) class_LinIf_Unused::CancelTransmit(void){
-}
-
-FUNC(void, LINIF_CODE) class_LinIf_Unused::CheckWakeup(void){
-}
-
-FUNC(void, LINIF_CODE) class_LinIf_Unused::CbWakeupConfirmation(void){
-}
 
 /*****************************************************/
 /* EOF                                               */
