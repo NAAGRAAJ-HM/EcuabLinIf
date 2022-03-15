@@ -32,7 +32,7 @@
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-extern infDcmClient* gptrinfDcmClient_LinIf;
+extern CONSTP2VAR(infDcmClient, LINIF_VAR, LINIF_CONST) gptrinfDcmClient_LinIf;
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
