@@ -6,9 +6,8 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "infLinIf_Version.h"
-
 #include "module.h"
+#include "infLinIf_Version.h"
 #include "infLinIf_EcuM.h"
 #include "infLinIf_Dcm.h"
 #include "infLinIf_SchM.h"
@@ -45,31 +44,20 @@ class module_LinIf:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-
-/******************************************************************************/
-/* FUNCTIONS                                                                  */
-/******************************************************************************/
-
-/******************************************************************************/
-/* EOF                                                                        */
-/******************************************************************************/
-
-
-/*****************************************************/
-/* OBJECTS                                           */
-/*****************************************************/
 VAR(module_LinIf, LINIF_VAR) LinIf;
 CONSTP2VAR(infEcuMClient, LINIF_VAR, LINIF_CONST) gptrinfEcuMClient_LinIf = &LinIf;
 CONSTP2VAR(infDcmClient,  LINIF_VAR, LINIF_CONST) gptrinfDcmClient_LinIf  = &LinIf;
 CONSTP2VAR(infSchMClient, LINIF_VAR, LINIF_CONST) gptrinfSchMClient_LinIf = &LinIf;
 
-/*****************************************************/
-/* FUNCTIONS                                         */
-/*****************************************************/
+/******************************************************************************/
+/* FUNCTIONS                                                                  */
+/******************************************************************************/
 FUNC(void, LINIF_CODE) module_LinIf::InitFunction(void){
+   LinIf.IsInitDone = E_OK;
 }
 
 FUNC(void, LINIF_CODE) module_LinIf::DeInitFunction(void){
+   LinIf.IsInitDone = E_NOT_OK;
 }
 
 FUNC(void, LINIF_CODE) module_LinIf::GetVersionInfo(void){
@@ -113,7 +101,7 @@ FUNC(void, LINIF_CODE) class_LinIf_Unused::CheckWakeup(void){
 FUNC(void, LINIF_CODE) class_LinIf_Unused::CbWakeupConfirmation(void){
 }
 
-/*****************************************************/
-/* EOF                                               */
-/*****************************************************/
+/******************************************************************************/
+/* EOF                                                                        */
+/******************************************************************************/
 
