@@ -7,7 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.h"
-#include "infLinIf_Version.h"
+#include "LinIf_Cfg.h"
 #include "infLinIf_EcuM.h"
 #include "infLinIf_Dcm.h"
 #include "infLinIf_SchM.h"
@@ -15,10 +15,19 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
+#define LINIF_AR_RELEASE_MAJOR_VERSION                                         4
+#define LINIF_AR_RELEASE_MINOR_VERSION                                         3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
+#if(LINIF_AR_RELEASE_MAJOR_VERSION != STD_AR_RELEASE_MAJOR_VERSION)
+   #error "Incompatible LINIF_AR_RELEASE_MAJOR_VERSION!"
+#endif
+
+#if(LINIF_AR_RELEASE_MINOR_VERSION != STD_AR_RELEASE_MINOR_VERSION)
+   #error "Incompatible LINIF_AR_RELEASE_MINOR_VERSION!"
+#endif
 
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
@@ -61,6 +70,11 @@ FUNC(void, LINIF_CODE) module_LinIf::DeInitFunction(void){
 }
 
 FUNC(void, LINIF_CODE) module_LinIf::GetVersionInfo(void){
+#if(STD_ON == LinIf_DevErrorDetect)
+//TBD: API parameter check
+   Det_ReportError(
+   );
+#endif
 }
 
 FUNC(void, LINIF_CODE) module_LinIf::MainFunction(void){
