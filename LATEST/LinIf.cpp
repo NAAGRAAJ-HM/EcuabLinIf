@@ -40,6 +40,16 @@ class module_LinIf:
       FUNC(void, LINIF_CODE) DeInitFunction (void);
       FUNC(void, LINIF_CODE) GetVersionInfo (void);
       FUNC(void, LINIF_CODE) MainFunction   (void);
+
+   private:
+      CONST(Std_TypeVersionInfo, LINIF_CONST) VersionInfo = {
+            0x0000
+         ,  0xFFFF
+         ,  0x01
+         ,  '0'
+         ,  '1'
+         ,  '0'
+      };
 };
 
 /******************************************************************************/
