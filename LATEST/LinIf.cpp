@@ -6,11 +6,11 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "module.h"
-#include "CfgLinIf.h"
-#include "infLinIf_EcuM.h"
-#include "infLinIf_Dcm.h"
-#include "infLinIf_SchM.h"
+#include "module.hpp"
+#include "CfgLinIf.hpp"
+#include "infLinIf_EcuM.hpp"
+#include "infLinIf_Dcm.hpp"
+#include "infLinIf_SchM.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -90,7 +90,7 @@ FUNC(void, LINIF_CODE) module_LinIf::GetVersionInfo(void){
 FUNC(void, LINIF_CODE) module_LinIf::MainFunction(void){
 }
 
-#include "LinIf_Unused.h"
+#include "LinIf_Unused.hpp"
 
 FUNC(void, LINIF_CODE) class_LinIf_Unused::Transmit(void){
 }
