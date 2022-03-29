@@ -7,7 +7,6 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.hpp"
-#include "CfgLinIf.hpp"
 #include "infLinIf_EcuM.hpp"
 #include "infLinIf_Dcm.hpp"
 #include "infLinIf_SchM.hpp"
@@ -36,37 +35,40 @@ class module_LinIf:
       public abstract_module
 {
    public:
+      module_LinIf(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
+      }
       FUNC(void, LINIF_CODE) InitFunction   (void);
       FUNC(void, LINIF_CODE) DeInitFunction (void);
-      FUNC(void, LINIF_CODE) GetVersionInfo (void);
       FUNC(void, LINIF_CODE) MainFunction   (void);
-
-   private:
-      CONST(Std_TypeVersionInfo, LINIF_CONST) VersionInfo = {
-            0x0000
-         ,  0xFFFF
-         ,  0x01
-         ,  '0'
-         ,  '1'
-         ,  '0'
-      };
 };
+
+extern VAR(module_LinIf, LINIF_VAR) LinIf;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
 /******************************************************************************/
+CONSTP2VAR(infEcuMClient, LINIF_VAR, LINIF_CONST) gptrinfEcuMClient_LinIf = &LinIf;
+CONSTP2VAR(infDcmClient,  LINIF_VAR, LINIF_CONST) gptrinfDcmClient_LinIf  = &LinIf;
+CONSTP2VAR(infSchMClient, LINIF_VAR, LINIF_CONST) gptrinfSchMClient_LinIf = &LinIf;
 
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
+#include "CfgLinIf.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_LinIf, LINIF_VAR) LinIf;
-CONSTP2VAR(infEcuMClient, LINIF_VAR, LINIF_CONST) gptrinfEcuMClient_LinIf = &LinIf;
-CONSTP2VAR(infDcmClient,  LINIF_VAR, LINIF_CONST) gptrinfDcmClient_LinIf  = &LinIf;
-CONSTP2VAR(infSchMClient, LINIF_VAR, LINIF_CONST) gptrinfSchMClient_LinIf = &LinIf;
+VAR(module_LinIf, LINIF_VAR) LinIf(
+   {
+         0x0000
+      ,  0xFFFF
+      ,  0x01
+      ,  '0'
+      ,  '1'
+      ,  '0'
+   }
+);
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
@@ -77,14 +79,6 @@ FUNC(void, LINIF_CODE) module_LinIf::InitFunction(void){
 
 FUNC(void, LINIF_CODE) module_LinIf::DeInitFunction(void){
    LinIf.IsInitDone = E_NOT_OK;
-}
-
-FUNC(void, LINIF_CODE) module_LinIf::GetVersionInfo(void){
-#if(STD_ON == LinIf_DevErrorDetect)
-//TBD: API parameter check
-   Det_ReportError(
-   );
-#endif
 }
 
 FUNC(void, LINIF_CODE) module_LinIf::MainFunction(void){
