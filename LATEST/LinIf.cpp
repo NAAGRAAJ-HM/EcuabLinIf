@@ -6,7 +6,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "module.hpp"
+#include "Module.hpp"
 #include "infLinIf_EcuM.hpp"
 #include "infLinIf_Dcm.hpp"
 #include "infLinIf_SchM.hpp"
@@ -37,6 +37,9 @@ class module_LinIf:
    public:
       module_LinIf(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
       }
+      FUNC(void, _CODE) InitFunction(
+         CONSTP2CONST(CfgModule_TypeAbstract, _CONFIG_DATA, _APPL_CONST) lptrCfgModule
+      );
       FUNC(void, LINIF_CODE) InitFunction   (void);
       FUNC(void, LINIF_CODE) DeInitFunction (void);
       FUNC(void, LINIF_CODE) MainFunction   (void);
@@ -73,7 +76,19 @@ VAR(module_LinIf, LINIF_VAR) LinIf(
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-FUNC(void, LINIF_CODE) module_LinIf::InitFunction(void){
+FUNC(void, LINIF_CODE) module_LinIf::InitFunction(
+   CONSTP2CONST(CfgLinIf_Type, CFGLINIF_CONFIG_DATA, CFGLINIF_APPL_CONST) lptrCfgLinIf
+){
+   if(NULL_PTR == lptrCfgLinIf){
+#if(STD_ON == LinIf_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+// check lptrCfgLinIf for memory faults
+// use PBcfg_LinIf as back-up configuration
+   }
    LinIf.IsInitDone = E_OK;
 }
 
