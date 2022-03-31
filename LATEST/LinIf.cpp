@@ -37,10 +37,9 @@ class module_LinIf:
    public:
       module_LinIf(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
       }
-      FUNC(void, _CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, _CONFIG_DATA, _APPL_CONST) lptrCfgModule
+      FUNC(void, LINIF_CODE) InitFunction(
+         CONSTP2CONST(CfgModule_TypeAbstract, LINIF_CONFIG_DATA, LINIF_APPL_CONST) lptrCfgModule
       );
-      FUNC(void, LINIF_CODE) InitFunction   (void);
       FUNC(void, LINIF_CODE) DeInitFunction (void);
       FUNC(void, LINIF_CODE) MainFunction   (void);
 };
@@ -77,23 +76,39 @@ VAR(module_LinIf, LINIF_VAR) LinIf(
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 FUNC(void, LINIF_CODE) module_LinIf::InitFunction(
-   CONSTP2CONST(CfgLinIf_Type, CFGLINIF_CONFIG_DATA, CFGLINIF_APPL_CONST) lptrCfgLinIf
+   CONSTP2CONST(CfgModule_TypeAbstract, LINIF_CONFIG_DATA, LINIF_APPL_CONST) lptrCfgModule
 ){
-   if(NULL_PTR == lptrCfgLinIf){
+   if(E_OK == IsInitDone){
 #if(STD_ON == LinIf_DevErrorDetect)
       Det_ReportError(
       );
 #endif
    }
    else{
-// check lptrCfgLinIf for memory faults
+      if(NULL_PTR == lptrCfgModule){
+#if(STD_ON == LinIf_DevErrorDetect)
+         Det_ReportError(
+         );
+#endif
+      }
+      else{
+// check lptrCfgModule for memory faults
 // use PBcfg_LinIf as back-up configuration
+      }
+      IsInitDone = E_OK;
    }
-   LinIf.IsInitDone = E_OK;
 }
 
 FUNC(void, LINIF_CODE) module_LinIf::DeInitFunction(void){
-   LinIf.IsInitDone = E_NOT_OK;
+   if(E_OK != IsInitDone){
+#if(STD_ON == LinIf_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+      IsInitDone = E_NOT_OK;
+   }
 }
 
 FUNC(void, LINIF_CODE) module_LinIf::MainFunction(void){
