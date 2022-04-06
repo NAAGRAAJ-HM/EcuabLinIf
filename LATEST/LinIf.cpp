@@ -14,18 +14,18 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define LINIF_AR_RELEASE_MAJOR_VERSION                                         4
-#define LINIF_AR_RELEASE_MINOR_VERSION                                         3
+#define LINIF_AR_RELEASE_VERSION_MAJOR                                         4
+#define LINIF_AR_RELEASE_VERSION_MINOR                                         3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
-#if(LINIF_AR_RELEASE_MAJOR_VERSION != STD_AR_RELEASE_MAJOR_VERSION)
-   #error "Incompatible LINIF_AR_RELEASE_MAJOR_VERSION!"
+#if(LINIF_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
+   #error "Incompatible LINIF_AR_RELEASE_VERSION_MAJOR!"
 #endif
 
-#if(LINIF_AR_RELEASE_MINOR_VERSION != STD_AR_RELEASE_MINOR_VERSION)
-   #error "Incompatible LINIF_AR_RELEASE_MINOR_VERSION!"
+#if(LINIF_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
+   #error "Incompatible LINIF_AR_RELEASE_VERSION_MINOR!"
 #endif
 
 /******************************************************************************/
@@ -63,8 +63,10 @@ CONSTP2VAR(infSchMClient, LINIF_VAR, LINIF_CONST) gptrinfSchMClient_LinIf = &Lin
 /******************************************************************************/
 VAR(module_LinIf, LINIF_VAR) LinIf(
    {
-         0x0000
-      ,  0xFFFF
+         LINIF_AR_RELEASE_VERSION_MAJOR
+      ,  LINIF_AR_RELEASE_VERSION_MINOR
+      ,  0x00
+      ,  0xFF
       ,  0x01
       ,  '0'
       ,  '1'
