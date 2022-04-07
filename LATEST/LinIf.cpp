@@ -101,8 +101,8 @@ FUNC(void, LINIF_CODE) module_LinIf::InitFunction(
             lptrCfg = lptrCfgModule;
          }
          else{
-// use PBcfg_CanIf as back-up configuration
-            lptrCfg = PBcfg_CanIf;
+// use PBcfgCanIf as back-up configuration
+            lptrCfg = &PBcfgLinIf;
          }
       }
       IsInitDone = E_OK;
