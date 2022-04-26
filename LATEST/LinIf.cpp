@@ -31,8 +31,25 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
+class class_LinIf_Functionality{
+   public:
+      FUNC(void, LINIF_CODE) GetVersionInfo       (void);
+      FUNC(void, LINIF_CODE) Transmit             (void);
+      FUNC(void, LINIF_CODE) ScheduleRequest      (void);
+      FUNC(void, LINIF_CODE) GoToSleep            (void);
+      FUNC(void, LINIF_CODE) Wakeup               (void);
+      FUNC(void, LINIF_CODE) GetTrcvMode          (void);
+      FUNC(void, LINIF_CODE) SetTrcvMode          (void);
+      FUNC(void, LINIF_CODE) GetTrcvWakeupReason  (void);
+      FUNC(void, LINIF_CODE) SetTrcvWakeupMode    (void);
+      FUNC(void, LINIF_CODE) CancelTransmit       (void);
+      FUNC(void, LINIF_CODE) CheckWakeup          (void);
+      FUNC(void, LINIF_CODE) CbWakeupConfirmation (void);
+};
+
 class module_LinIf:
       public abstract_module
+   ,  public class_LinIf_Functionality
 {
    public:
       module_LinIf(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
@@ -84,6 +101,10 @@ FUNC(void, LINIF_CODE) module_LinIf::InitFunction(
    if(E_OK == IsInitDone){
 #if(STD_ON == LinIf_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -92,6 +113,10 @@ FUNC(void, LINIF_CODE) module_LinIf::InitFunction(
       if(NULL_PTR == lptrCfgModule){
 #if(STD_ON == LinIf_DevErrorDetect)
          Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
          );
 #endif
       }
@@ -116,6 +141,10 @@ FUNC(void, LINIF_CODE) module_LinIf::DeInitFunction(void){
    if(E_OK != IsInitDone){
 #if(STD_ON == LinIf_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -132,6 +161,10 @@ FUNC(void, LINIF_CODE) module_LinIf::MainFunction(void){
    if(E_OK != IsInitDone){
 #if(STD_ON == LinIf_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -142,53 +175,37 @@ FUNC(void, LINIF_CODE) module_LinIf::MainFunction(void){
 #endif
 }
 
-class class_LinIf_Unused{
-   public:
-      FUNC(void, LINIF_CODE) GetVersionInfo       (void);
-      FUNC(void, LINIF_CODE) Transmit             (void);
-      FUNC(void, LINIF_CODE) ScheduleRequest      (void);
-      FUNC(void, LINIF_CODE) GoToSleep            (void);
-      FUNC(void, LINIF_CODE) Wakeup               (void);
-      FUNC(void, LINIF_CODE) GetTrcvMode          (void);
-      FUNC(void, LINIF_CODE) SetTrcvMode          (void);
-      FUNC(void, LINIF_CODE) GetTrcvWakeupReason  (void);
-      FUNC(void, LINIF_CODE) SetTrcvWakeupMode    (void);
-      FUNC(void, LINIF_CODE) CancelTransmit       (void);
-      FUNC(void, LINIF_CODE) CheckWakeup          (void);
-      FUNC(void, LINIF_CODE) CbWakeupConfirmation (void);
-};
-
-FUNC(void, LINIF_CODE) class_LinIf_Unused::Transmit(void){
+FUNC(void, LINIF_CODE) class_LinIf_Functionality::Transmit(void){
 }
 
-FUNC(void, LINIF_CODE) class_LinIf_Unused::ScheduleRequest(void){
+FUNC(void, LINIF_CODE) class_LinIf_Functionality::ScheduleRequest(void){
 }
 
-FUNC(void, LINIF_CODE) class_LinIf_Unused::GoToSleep(void){
+FUNC(void, LINIF_CODE) class_LinIf_Functionality::GoToSleep(void){
 }
 
-FUNC(void, LINIF_CODE) class_LinIf_Unused::Wakeup(void){
+FUNC(void, LINIF_CODE) class_LinIf_Functionality::Wakeup(void){
 }
 
-FUNC(void, LINIF_CODE) class_LinIf_Unused::GetTrcvMode(void){
+FUNC(void, LINIF_CODE) class_LinIf_Functionality::GetTrcvMode(void){
 }
 
-FUNC(void, LINIF_CODE) class_LinIf_Unused::SetTrcvMode(void){
+FUNC(void, LINIF_CODE) class_LinIf_Functionality::SetTrcvMode(void){
 }
 
-FUNC(void, LINIF_CODE) class_LinIf_Unused::GetTrcvWakeupReason(void){
+FUNC(void, LINIF_CODE) class_LinIf_Functionality::GetTrcvWakeupReason(void){
 }
 
-FUNC(void, LINIF_CODE) class_LinIf_Unused::SetTrcvWakeupMode(void){
+FUNC(void, LINIF_CODE) class_LinIf_Functionality::SetTrcvWakeupMode(void){
 }
 
-FUNC(void, LINIF_CODE) class_LinIf_Unused::CancelTransmit(void){
+FUNC(void, LINIF_CODE) class_LinIf_Functionality::CancelTransmit(void){
 }
 
-FUNC(void, LINIF_CODE) class_LinIf_Unused::CheckWakeup(void){
+FUNC(void, LINIF_CODE) class_LinIf_Functionality::CheckWakeup(void){
 }
 
-FUNC(void, LINIF_CODE) class_LinIf_Unused::CbWakeupConfirmation(void){
+FUNC(void, LINIF_CODE) class_LinIf_Functionality::CbWakeupConfirmation(void){
 }
 
 /******************************************************************************/
