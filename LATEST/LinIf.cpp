@@ -7,6 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
+#include "LinIf_core.hpp"
 #include "infLinIf_EcuM.hpp"
 #include "infLinIf_Dcm.hpp"
 #include "infLinIf_SchM.hpp"
