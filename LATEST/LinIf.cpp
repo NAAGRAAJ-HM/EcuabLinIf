@@ -7,10 +7,9 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
+#include "CfgLinIf.hpp"
 #include "LinIf_core.hpp"
-#include "infLinIf_EcuM.hpp"
-#include "infLinIf_Dcm.hpp"
-#include "infLinIf_SchM.hpp"
+#include "infLinIf.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -44,6 +43,7 @@ class module_LinIf:
       );
       FUNC(void, LINIF_CODE) DeInitFunction (void);
       FUNC(void, LINIF_CODE) MainFunction   (void);
+      LINIF_CORE_FUNCTIONALITIES
 };
 
 extern VAR(module_LinIf, LINIF_VAR) LinIf;
@@ -58,7 +58,6 @@ CONSTP2VAR(infSchMClient, LINIF_VAR, LINIF_CONST) gptrinfSchMClient_LinIf = &Lin
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
-#include "CfgLinIf.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */
