@@ -13,7 +13,6 @@
 /* #DEFINES                                                                   */
 /******************************************************************************/
 #define LINIF_CORE_FUNCTIONALITIES                                             \
-              FUNC(void, LINIF_CODE) GetVersionInfo       (void);              \
               FUNC(void, LINIF_CODE) Transmit             (void);              \
               FUNC(void, LINIF_CODE) ScheduleRequest      (void);              \
               FUNC(void, LINIF_CODE) GoToSleep            (void);              \
@@ -27,7 +26,6 @@
               FUNC(void, LINIF_CODE) CbWakeupConfirmation (void);              \
 
 #define LINIF_CORE_FUNCTIONALITIES_VIRTUAL                                     \
-      virtual FUNC(void, LINIF_CODE) GetVersionInfo       (void) = 0;          \
       virtual FUNC(void, LINIF_CODE) Transmit             (void) = 0;          \
       virtual FUNC(void, LINIF_CODE) ScheduleRequest      (void) = 0;          \
       virtual FUNC(void, LINIF_CODE) GoToSleep            (void) = 0;          \

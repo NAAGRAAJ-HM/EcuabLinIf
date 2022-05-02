@@ -159,37 +159,37 @@ FUNC(void, LINIF_CODE) module_LinIf::MainFunction(void){
 #endif
 }
 
-FUNC(void, LINIF_CODE) class_LinIf_Functionality::Transmit(void){
+FUNC(void, LINIF_CODE) module_LinIf::Transmit(void){
 }
 
-FUNC(void, LINIF_CODE) class_LinIf_Functionality::ScheduleRequest(void){
+FUNC(void, LINIF_CODE) module_LinIf::ScheduleRequest(void){
 }
 
-FUNC(void, LINIF_CODE) class_LinIf_Functionality::GoToSleep(void){
+FUNC(void, LINIF_CODE) module_LinIf::GoToSleep(void){
 }
 
-FUNC(void, LINIF_CODE) class_LinIf_Functionality::Wakeup(void){
+FUNC(void, LINIF_CODE) module_LinIf::Wakeup(void){
 }
 
-FUNC(void, LINIF_CODE) class_LinIf_Functionality::GetTrcvMode(void){
+FUNC(void, LINIF_CODE) module_LinIf::GetTrcvMode(void){
 }
 
-FUNC(void, LINIF_CODE) class_LinIf_Functionality::SetTrcvMode(void){
+FUNC(void, LINIF_CODE) module_LinIf::SetTrcvMode(void){
 }
 
-FUNC(void, LINIF_CODE) class_LinIf_Functionality::GetTrcvWakeupReason(void){
+FUNC(void, LINIF_CODE) module_LinIf::GetTrcvWakeupReason(void){
 }
 
-FUNC(void, LINIF_CODE) class_LinIf_Functionality::SetTrcvWakeupMode(void){
+FUNC(void, LINIF_CODE) module_LinIf::SetTrcvWakeupMode(void){
 }
 
-FUNC(void, LINIF_CODE) class_LinIf_Functionality::CancelTransmit(void){
+FUNC(void, LINIF_CODE) module_LinIf::CancelTransmit(void){
 }
 
-FUNC(void, LINIF_CODE) class_LinIf_Functionality::CheckWakeup(void){
+FUNC(void, LINIF_CODE) module_LinIf::CheckWakeup(void){
 }
 
-FUNC(void, LINIF_CODE) class_LinIf_Functionality::CbWakeupConfirmation(void){
+FUNC(void, LINIF_CODE) module_LinIf::CbWakeupConfirmation(void){
 }
 
 /******************************************************************************/
