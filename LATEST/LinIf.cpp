@@ -113,7 +113,7 @@ FUNC(void, LINIF_CODE) module_LinIf::InitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  LINIF_E_UNINIT
       );
 #endif
    }
@@ -133,7 +133,7 @@ FUNC(void, LINIF_CODE) module_LinIf::DeInitFunction(void){
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  LINIF_E_UNINIT
       );
 #endif
    }
@@ -152,7 +152,7 @@ FUNC(void, LINIF_CODE) module_LinIf::MainFunction(void){
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  LINIF_E_UNINIT
       );
 #endif
    }
