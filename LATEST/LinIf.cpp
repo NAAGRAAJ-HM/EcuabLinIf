@@ -89,7 +89,10 @@ FUNC(void, LINIF_CODE) module_LinIf::InitFunction(
    CONSTP2CONST(CfgModule_TypeAbstract, LINIF_CONFIG_DATA, LINIF_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == LinIf_InitCheck)
-   if(E_OK != IsInitDone){
+   if(
+         E_OK
+      != IsInitDone
+   ){
 #endif
       if(NULL_PTR != lptrCfgModule){
          if(STD_HIGH){
@@ -127,7 +130,10 @@ FUNC(void, LINIF_CODE) module_LinIf::InitFunction(
 
 FUNC(void, LINIF_CODE) module_LinIf::DeInitFunction(void){
 #if(STD_ON == LinIf_InitCheck)
-   if(E_OK == IsInitDone){
+   if(
+         E_OK
+      == IsInitDone
+   ){
 #endif
 #if(STD_ON == LinIf_InitCheck)
       IsInitDone = E_NOT_OK;
@@ -147,7 +153,10 @@ FUNC(void, LINIF_CODE) module_LinIf::DeInitFunction(void){
 
 FUNC(void, LINIF_CODE) module_LinIf::MainFunction(void){
 #if(STD_ON == LinIf_InitCheck)
-   if(E_OK == IsInitDone){
+   if(
+         E_OK
+      == IsInitDone
+   ){
 #endif
 #if(STD_ON == LinIf_InitCheck)
    }
