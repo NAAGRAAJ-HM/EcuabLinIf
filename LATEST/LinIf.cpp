@@ -9,7 +9,7 @@
 #include "Module.hpp"
 #include "CfgLinIf.hpp"
 #include "LinIf_core.hpp"
-#include "infLinIf.hpp"
+#include "infLinIf_Exp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -32,6 +32,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_LinIf:
+   INTERFACES_EXPORTED_LINIF
       public abstract_module
    ,  public class_LinIf_Functionality
 {
