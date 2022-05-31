@@ -32,7 +32,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_LinIf:
-   INTERFACES_EXPORTED_LINIF
+      INTERFACES_EXPORTED_LINIF
       public abstract_module
    ,  public class_LinIf_Functionality
 {
