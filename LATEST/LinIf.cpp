@@ -10,6 +10,7 @@
 #include "CfgLinIf.hpp"
 #include "LinIf_core.hpp"
 #include "infLinIf_Exp.hpp"
+#include "infLinIf_Imp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -42,6 +43,7 @@ class module_LinIf:
 /******************************************************************************/
             Std_TypeReturn          IsInitDone{E_NOT_OK};
       const CfgModule_TypeAbstract* lptrCfg{(CfgModule_TypeAbstract*)NULL_PTR};
+            infPduRClient_Lo        infPduRClient_LinIf;
 
    public:
       module_LinIf(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
