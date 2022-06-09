@@ -75,10 +75,10 @@ CONSTP2VAR(infSchMClient, LINIF_VAR, LINIF_CONST) gptrinfSchMClient_LinIf = &Lin
 VAR(module_LinIf, LINIF_VAR) LinIf(
    {
 #if(STD_ON == _ReSIM)
-         "LinIf"
+         "LinIf",
 #else
 #endif
-      ,  LINIF_AR_RELEASE_VERSION_MAJOR
+         LINIF_AR_RELEASE_VERSION_MAJOR
       ,  LINIF_AR_RELEASE_VERSION_MINOR
       ,  0x00
       ,  0xFF
