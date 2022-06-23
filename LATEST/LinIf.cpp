@@ -131,7 +131,9 @@ FUNC(void, LINIF_CODE) module_LinIf::InitFunction(
 #endif
 }
 
-FUNC(void, LINIF_CODE) module_LinIf::DeInitFunction(void){
+FUNC(void, LINIF_CODE) module_LinIf::DeInitFunction(
+   void
+){
 #if(STD_ON == LinIf_InitCheck)
    if(
          E_OK
@@ -154,7 +156,9 @@ FUNC(void, LINIF_CODE) module_LinIf::DeInitFunction(void){
 #endif
 }
 
-FUNC(void, LINIF_CODE) module_LinIf::MainFunction(void){
+FUNC(void, LINIF_CODE) module_LinIf::MainFunction(
+   void
+){
 #if(STD_ON == LinIf_InitCheck)
    if(
          E_OK
@@ -176,37 +180,59 @@ FUNC(void, LINIF_CODE) module_LinIf::MainFunction(void){
 #endif
 }
 
-FUNC(void, LINIF_CODE) module_LinIf::Transmit(void){
+FUNC(void, LINIF_CODE) module_LinIf::Transmit(
+   void
+){
 }
 
-FUNC(void, LINIF_CODE) module_LinIf::ScheduleRequest(void){
+FUNC(void, LINIF_CODE) module_LinIf::ScheduleRequest(
+   void
+){
 }
 
-FUNC(void, LINIF_CODE) module_LinIf::GoToSleep(void){
+FUNC(void, LINIF_CODE) module_LinIf::GoToSleep(
+   void
+){
 }
 
-FUNC(void, LINIF_CODE) module_LinIf::Wakeup(void){
+FUNC(void, LINIF_CODE) module_LinIf::Wakeup(
+   void
+){
 }
 
-FUNC(void, LINIF_CODE) module_LinIf::GetTrcvMode(void){
+FUNC(void, LINIF_CODE) module_LinIf::GetTrcvMode(
+   void
+){
 }
 
-FUNC(void, LINIF_CODE) module_LinIf::SetTrcvMode(void){
+FUNC(void, LINIF_CODE) module_LinIf::SetTrcvMode(
+   void
+){
 }
 
-FUNC(void, LINIF_CODE) module_LinIf::GetTrcvWakeupReason(void){
+FUNC(void, LINIF_CODE) module_LinIf::GetTrcvWakeupReason(
+   void
+){
 }
 
-FUNC(void, LINIF_CODE) module_LinIf::SetTrcvWakeupMode(void){
+FUNC(void, LINIF_CODE) module_LinIf::SetTrcvWakeupMode(
+   void
+){
 }
 
-FUNC(void, LINIF_CODE) module_LinIf::CancelTransmit(void){
+FUNC(void, LINIF_CODE) module_LinIf::CancelTransmit(
+   void
+){
 }
 
-FUNC(void, LINIF_CODE) module_LinIf::CheckWakeup(void){
+FUNC(void, LINIF_CODE) module_LinIf::CheckWakeup(
+   void
+){
 }
 
-FUNC(void, LINIF_CODE) module_LinIf::CbWakeupConfirmation(void){
+FUNC(void, LINIF_CODE) module_LinIf::CbWakeupConfirmation(
+   void
+){
 }
 
 /******************************************************************************/
