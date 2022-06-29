@@ -41,13 +41,9 @@ class module_LinIf:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-            Std_TypeReturn          IsInitDone{E_NOT_OK};
-      const CfgModule_TypeAbstract* lptrCfg{(CfgModule_TypeAbstract*)NULL_PTR};
             infPduRClient_Lo        infPduRClient_LinIf;
 
    public:
-      module_LinIf(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
-      }
       FUNC(void, LINIF_CODE) InitFunction(
          CONSTP2CONST(CfgModule_TypeAbstract, LINIF_CONFIG_DATA, LINIF_APPL_CONST) lptrCfgModule
       );
@@ -72,18 +68,7 @@ CONSTP2VAR(infSchMClient, LINIF_VAR, LINIF_CONST) gptrinfSchMClient_LinIf = &Lin
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_LinIf, LINIF_VAR) LinIf(
-   {
-         LINIF_AR_RELEASE_VERSION_MAJOR
-      ,  LINIF_AR_RELEASE_VERSION_MINOR
-      ,  0x00
-      ,  0xFF
-      ,  0x01
-      ,  '0'
-      ,  '1'
-      ,  '0'
-   }
-);
+VAR(module_LinIf, LINIF_VAR) LinIf;
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
