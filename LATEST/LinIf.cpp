@@ -83,12 +83,7 @@ FUNC(void, LINIF_CODE) module_LinIf::InitFunction(
    ){
 #endif
       if(NULL_PTR != lptrCfgModule){
-         if(STD_HIGH){
-            lptrCfg = lptrCfgModule;
-         }
-         else{
-            lptrCfg = &PBcfgLinIf;
-         }
+         lptrCfg = lptrCfgModule;
       }
       else{
 #if(STD_ON == LinIf_DevErrorDetect)
