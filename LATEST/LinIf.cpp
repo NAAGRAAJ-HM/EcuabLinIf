@@ -7,9 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
-#include "CfgLinIf.hpp"
-#include "LinIf_core.hpp"
-#include "infLinIf_Exp.hpp"
+#include "LinIf.hpp"
 #include "infLinIf_Imp.hpp"
 
 /******************************************************************************/
@@ -32,27 +30,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class module_LinIf:
-      INTERFACES_EXPORTED_LINIF
-      public abstract_module
-   ,  public class_LinIf_Functionality
-{
-   private:
-/******************************************************************************/
-/* OBJECTS                                                                    */
-/******************************************************************************/
-            infPduRClient_Lo        infPduRClient_LinIf;
-
-   public:
-      FUNC(void, LINIF_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, LINIF_CONFIG_DATA, LINIF_APPL_CONST) lptrCfgModule
-      );
-      FUNC(void, LINIF_CODE) DeInitFunction (void);
-      FUNC(void, LINIF_CODE) MainFunction   (void);
-      LINIF_CORE_FUNCTIONALITIES
-};
-
-extern VAR(module_LinIf, LINIF_VAR) LinIf;
 
 /******************************************************************************/
 /* CONSTS                                                                     */

@@ -11,6 +11,7 @@
 #include "infLinIf_Dcm.hpp"
 #include "infLinIf_Det.hpp"
 #include "infLinIf_SchM.hpp"
+#include "infPduRClient_Lo.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
