@@ -7,6 +7,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
+#include "ConstLinIf.hpp"
 #include "CfgLinIf.hpp"
 #include "LinIf_core.hpp"
 #include "infLinIf_Exp.hpp"
@@ -31,6 +32,7 @@ class module_LinIf:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
+      const ConstLinIf_Type* lptrConst = (ConstLinIf_Type*)NULL_PTR;
       infPduRClient_Lo infPduRClient_LinIf;
 
    public:
@@ -38,7 +40,8 @@ class module_LinIf:
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
       FUNC(void, LINIF_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, LINIF_CONFIG_DATA, LINIF_APPL_CONST) lptrCfgModule
+            CONSTP2CONST(ConstModule_TypeAbstract, LINIF_CONST,       LINIF_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   LINIF_CONFIG_DATA, LINIF_APPL_CONST) lptrCfgModule
       );
       FUNC(void, LINIF_CODE) DeInitFunction (void);
       FUNC(void, LINIF_CODE) MainFunction   (void);

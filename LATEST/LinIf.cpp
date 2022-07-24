@@ -48,7 +48,8 @@ VAR(module_LinIf, LINIF_VAR) LinIf;
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 FUNC(void, LINIF_CODE) module_LinIf::InitFunction(
-   CONSTP2CONST(CfgModule_TypeAbstract, LINIF_CONFIG_DATA, LINIF_APPL_CONST) lptrCfgModule
+      CONSTP2CONST(ConstModule_TypeAbstract, LINIF_CONST,       LINIF_APPL_CONST) lptrConstModule
+   ,  CONSTP2CONST(CfgModule_TypeAbstract,   LINIF_CONFIG_DATA, LINIF_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == LinIf_InitCheck)
    if(
@@ -56,8 +57,12 @@ FUNC(void, LINIF_CODE) module_LinIf::InitFunction(
       != IsInitDone
    ){
 #endif
-      if(NULL_PTR != lptrCfgModule){
-         lptrCfg = lptrCfgModule;
+      if(
+            (NULL_PTR != lptrConstModule)
+         && (NULL_PTR != lptrCfgModule)
+      ){
+         lptrConst = lptrConstModule;
+         lptrCfg   = lptrCfgModule;
       }
       else{
 #if(STD_ON == LinIf_DevErrorDetect)
