@@ -61,7 +61,7 @@ FUNC(void, LINIF_CODE) module_LinIf::InitFunction(
             (NULL_PTR != lptrConstModule)
          && (NULL_PTR != lptrCfgModule)
       ){
-         lptrConst = lptrConstModule;
+         lptrConst = (const ConstLinIf_Type*)lptrConstModule;
          lptrCfg   = lptrCfgModule;
       }
       else{
