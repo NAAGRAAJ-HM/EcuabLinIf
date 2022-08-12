@@ -13,18 +13,18 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define ECUABLINIF_AR_RELEASE_VERSION_MAJOR                                         4
-#define ECUABLINIF_AR_RELEASE_VERSION_MINOR                                         3
+#define LINIF_AR_RELEASE_VERSION_MAJOR                                         4
+#define LINIF_AR_RELEASE_VERSION_MINOR                                         3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
-#if(ECUABLINIF_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
-   #error "Incompatible ECUABLINIF_AR_RELEASE_VERSION_MAJOR!"
+#if(LINIF_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
+   #error "Incompatible LINIF_AR_RELEASE_VERSION_MAJOR!"
 #endif
 
-#if(ECUABLINIF_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
-   #error "Incompatible ECUABLINIF_AR_RELEASE_VERSION_MINOR!"
+#if(LINIF_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
+   #error "Incompatible LINIF_AR_RELEASE_VERSION_MINOR!"
 #endif
 
 /******************************************************************************/
@@ -42,14 +42,14 @@
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_EcuabLinIf, ECUABLINIF_VAR) EcuabLinIf;
+VAR(module_EcuabLinIf, LINIF_VAR) EcuabLinIf;
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-FUNC(void, ECUABLINIF_CODE) module_EcuabLinIf::InitFunction(
-      CONSTP2CONST(ConstModule_TypeAbstract, ECUABLINIF_CONST,       ECUABLINIF_APPL_CONST) lptrConstModule
-   ,  CONSTP2CONST(CfgModule_TypeAbstract,   ECUABLINIF_CONFIG_DATA, ECUABLINIF_APPL_CONST) lptrCfgModule
+FUNC(void, LINIF_CODE) module_EcuabLinIf::InitFunction(
+      CONSTP2CONST(ConstModule_TypeAbstract, LINIF_CONST,       LINIF_APPL_CONST) lptrConstModule
+   ,  CONSTP2CONST(CfgModule_TypeAbstract,   LINIF_CONFIG_DATA, LINIF_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == EcuabLinIf_InitCheck)
    if(
@@ -83,14 +83,14 @@ FUNC(void, ECUABLINIF_CODE) module_EcuabLinIf::InitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  ECUABLINIF_E_UNINIT
+         ,  LINIF_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, ECUABLINIF_CODE) module_EcuabLinIf::DeInitFunction(
+FUNC(void, LINIF_CODE) module_EcuabLinIf::DeInitFunction(
    void
 ){
 #if(STD_ON == EcuabLinIf_InitCheck)
@@ -108,14 +108,14 @@ FUNC(void, ECUABLINIF_CODE) module_EcuabLinIf::DeInitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  ECUABLINIF_E_UNINIT
+         ,  LINIF_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, ECUABLINIF_CODE) module_EcuabLinIf::MainFunction(
+FUNC(void, LINIF_CODE) module_EcuabLinIf::MainFunction(
    void
 ){
 #if(STD_ON == EcuabLinIf_InitCheck)
@@ -132,64 +132,64 @@ FUNC(void, ECUABLINIF_CODE) module_EcuabLinIf::MainFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  ECUABLINIF_E_UNINIT
+         ,  LINIF_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, ECUABLINIF_CODE) module_EcuabLinIf::Transmit(
+FUNC(void, LINIF_CODE) module_EcuabLinIf::Transmit(
    void
 ){
 }
 
-FUNC(void, ECUABLINIF_CODE) module_EcuabLinIf::ScheduleRequest(
+FUNC(void, LINIF_CODE) module_EcuabLinIf::ScheduleRequest(
    void
 ){
 }
 
-FUNC(void, ECUABLINIF_CODE) module_EcuabLinIf::GoToSleep(
+FUNC(void, LINIF_CODE) module_EcuabLinIf::GoToSleep(
    void
 ){
 }
 
-FUNC(void, ECUABLINIF_CODE) module_EcuabLinIf::Wakeup(
+FUNC(void, LINIF_CODE) module_EcuabLinIf::Wakeup(
    void
 ){
 }
 
-FUNC(void, ECUABLINIF_CODE) module_EcuabLinIf::GetTrcvMode(
+FUNC(void, LINIF_CODE) module_EcuabLinIf::GetTrcvMode(
    void
 ){
 }
 
-FUNC(void, ECUABLINIF_CODE) module_EcuabLinIf::SetTrcvMode(
+FUNC(void, LINIF_CODE) module_EcuabLinIf::SetTrcvMode(
    void
 ){
 }
 
-FUNC(void, ECUABLINIF_CODE) module_EcuabLinIf::GetTrcvWakeupReason(
+FUNC(void, LINIF_CODE) module_EcuabLinIf::GetTrcvWakeupReason(
    void
 ){
 }
 
-FUNC(void, ECUABLINIF_CODE) module_EcuabLinIf::SetTrcvWakeupMode(
+FUNC(void, LINIF_CODE) module_EcuabLinIf::SetTrcvWakeupMode(
    void
 ){
 }
 
-FUNC(void, ECUABLINIF_CODE) module_EcuabLinIf::McalCancelTransmit(
+FUNC(void, LINIF_CODE) module_EcuabLinIf::McalCancelTransmit(
    void
 ){
 }
 
-FUNC(void, ECUABLINIF_CODE) module_EcuabLinIf::CheckWakeup(
+FUNC(void, LINIF_CODE) module_EcuabLinIf::CheckWakeup(
    void
 ){
 }
 
-FUNC(void, ECUABLINIF_CODE) module_EcuabLinIf::CbWakeupConfirmation(
+FUNC(void, LINIF_CODE) module_EcuabLinIf::CbWakeupConfirmation(
    void
 ){
 }

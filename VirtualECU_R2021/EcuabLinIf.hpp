@@ -24,7 +24,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_EcuabLinIf:
-      INTERFACES_EXMCALPORTED_ECUABLINIF
+      INTERFACES_EXPORTED_LINIF
       public abstract_module
    ,  public class_EcuabLinIf_Functionality
 {
@@ -39,13 +39,13 @@ class module_EcuabLinIf:
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-      FUNC(void, ECUABLINIF_CODE) InitFunction(
-            CONSTP2CONST(ConstModule_TypeAbstract, ECUABLINIF_CONST,       ECUABLINIF_APPL_CONST) lptrConstModule
-         ,  CONSTP2CONST(CfgModule_TypeAbstract,   ECUABLINIF_CONFIG_DATA, ECUABLINIF_APPL_CONST) lptrCfgModule
+      FUNC(void, LINIF_CODE) InitFunction(
+            CONSTP2CONST(ConstModule_TypeAbstract, LINIF_CONST,       LINIF_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   LINIF_CONFIG_DATA, LINIF_APPL_CONST) lptrCfgModule
       );
-      FUNC(void, ECUABLINIF_CODE) DeInitFunction (void);
-      FUNC(void, ECUABLINIF_CODE) MainFunction   (void);
-      ECUABLINIF_CORE_FUNCTIONALITIES
+      FUNC(void, LINIF_CODE) DeInitFunction (void);
+      FUNC(void, LINIF_CODE) MainFunction   (void);
+      LINIF_CORE_FUNCTIONALITIES
 };
 
 /******************************************************************************/
@@ -59,7 +59,7 @@ class module_EcuabLinIf:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-extern VAR(module_EcuabLinIf, ECUABLINIF_VAR) EcuabLinIf;
+extern VAR(module_EcuabLinIf, LINIF_VAR) EcuabLinIf;
 
 /******************************************************************************/
 /* EOF                                                                        */
