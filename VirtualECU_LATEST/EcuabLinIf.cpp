@@ -1,5 +1,5 @@
 /******************************************************************************/
-/* File   : EcuabLinIf.cpp                                                         */
+/* File   : EcuabLinIf.cpp                                                    */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
@@ -13,8 +13,8 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define ECUABLINIF_AR_RELEASE_VERSION_MAJOR                                         4
-#define ECUABLINIF_AR_RELEASE_VERSION_MINOR                                         3
+#define ECUABLINIF_AR_RELEASE_VERSION_MAJOR                                    4
+#define ECUABLINIF_AR_RELEASE_VERSION_MINOR                                    3
 
 /******************************************************************************/
 /* MACROS                                                                     */
