@@ -1,13 +1,13 @@
 #pragma once
 /******************************************************************************/
-/* File   : EcuabLinIf.hpp                                                         */
+/* File   : EcuabLinIf.hpp                                                    */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "ConstEcuabLinIf.hpp"
+#include "infEcuabLinIf_ServiceNvM_Types.hpp"
 #include "CfgEcuabLinIf.hpp"
 #include "EcuabLinIf_core.hpp"
 #include "infEcuabLinIf_Exp.hpp"
